@@ -39,7 +39,7 @@
   <header id="header" class="fixed-top header-inner-pages">
     <div class="container d-flex align-items-center justify-content-lg-between">
 
-      <h1 class="logo me-auto me-lg-0"><a href="index.html">Gp<span>.</span></a></h1>
+      <h1 class="logo me-auto me-lg-0"><a href="index.html">Hotel Alma Rosa<span>.</span></a></h1>
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto active" href="index.html">Incio</a></li>
@@ -79,10 +79,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Inner Page</h2>
+          <h2>Haz tu reserva</h2>
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Inner Page</li>
+            <li><a href="index.html">Volver</a></li>
+            <li>Reserva</li>
           </ol>
         </div>
 
@@ -95,8 +95,8 @@
           Example inner page template
         </p>
         <div id="reservationFormContainer">
-          <h3>Formulario de Reserva</h3>
-          <form id="reservationForm">
+          <h3>Completa con tus datos</h3>
+          <form id="reservationForm" action="enviar_formulario.php" method="POST">
             <div class="mb-3">
               <label for="nombre" class="form-label">Nombre</label>
               <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -104,6 +104,10 @@
             <div class="mb-3">
               <label for="apellido" class="form-label">Apellido</label>
               <input type="text" class="form-control" id="apellido" name="apellido" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" id="email" name="email" required>
             </div>
             <div class="mb-3">
               <label for="cantidadPersonas" class="form-label">Cantidad de Personas</label>
@@ -122,9 +126,7 @@
         </div>
       </div>
     </section>
-
-  </main><!-- End #main -->
-
+    
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="footer-top">
