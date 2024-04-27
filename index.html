@@ -74,47 +74,57 @@
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center justify-content-center">
-    <div class="container" data-aos="fade-up">
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+  <div class="hero-container">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
-      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
-        <div class="col-xl-6 col-lg-8">
-          <h1>Sientete LIBRE, siente en CASA<span>.</span></h1>
-          <h2>Bienvenidos a Navaluenga</h2>
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+      <div class="carousel-inner" role="listbox">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg);">
+          <div class="carousel-container">
+            <div class="carousel-content">
+              <h2 class="animate__animated animate__fadeInDown"><span>Sientete LIBRE,</span>sientete en CASA</h2>
+              <p class="animate__animated animate__fadeInUp">Bienvenido a Navaluenga</p>
+              <div>
+                
+                <a href="Reserva.html" class="btn-menu animate__animated animate__fadeInUp scrollto">Reserva</a>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Slide 2 con video de fondo -->
+        <div id="heroCarouse2" class="carousel-item">
+          <video autoplay muted loop id="video-background">
+            <source src="assets/img/slide/slide-2.jpg" type="image">
+          </video>
+          <div class="carousel-container">
+            <div class="carousel-content">
+              <h2 class="animate__animated animate__fadeInDown">Nuestro Café</h2>
+              <p class="animate__animated animate__fadeInUp">Nos importa cada detalle. Por eso, elegimos cuidadosamente un café de alta calidad para ofrecerte una experiencia excepcional en cada taza. Descubre el sabor de la dedicación en cada sorbo.</p>
+              <a href="https://www.instagram.com/pasteleria_erdm/" class="book-a-table-btn scrollto" target="_blank" rel="noopener noreferrer">Ir a Instagram</a>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box">
-            <i class="ri-store-line"></i>
-            <h3><a href="">Donde Comer</a></h3>
-          </div>
-        </div>
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box">
-            <i class="ri-bar-chart-box-line"></i>
-            <h3><a href="">Que ver</a></h3>
-          </div>
-        </div>
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box">
-            <i class="ri-calendar-todo-line"></i>
-            <h3><a href="">Reserva</a></h3>
-          </div>
-        </div>
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box">
-            <i class="ri-paint-brush-line"></i>
-            <h3><a href="">Naturaleza</a></h3>
-          </div>
-        </div>
-      </div>
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
     </div>
-  </section><!-- End Hero -->
+  </div>
+</section><!-- End Hero -->
 
-  <main id="main">
 
 <!-- ======= Services Section ======= -->
 <section id="services" class="services">
