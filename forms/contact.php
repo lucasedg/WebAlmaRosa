@@ -1,41 +1,24 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Reemplace 'contact@example.com' con su dirección de correo electrónico real
+    $receiving_email_address = 'contact@example.com';
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'contact@example.com';
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['Mensaje'];
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
+    // Procesar datos y enviar correo electrónico
+    $to = $receiving_email_address;
+    $subject = "Nuevo mensaje de $name: $subject";
+    $body = "Nombre: $name\nCorreo electrónico: $email\nMensaje:\n$message";
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
-
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
-
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
-
-  echo $contact->send();
+    if (mail($to, $subject, $body)) {
+        echo json_encode(array('status' => 'success', 'message' => 'Su mensaje fue enviado, muchas gracias.'));
+    } else {
+        echo json_encode(array('status' => 'error', 'message' => 'Error al enviar el mensaje. Por favor, inténtelo de nuevo.'));
+    }
+} else {
+    echo json_encode(array('status' => 'error', 'message' => 'El método de solicitud no es válido.'));
+}
 ?>
